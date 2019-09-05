@@ -11,6 +11,12 @@ $(document).ready(function () {
     }).addTo(mymap);
 
     var sdMarker = L.marker([32.7157, - 117.1611]).addTo(mymap);
-    sdMarker.bindPopup("<b>9520 Town Centre Drive</b><br>https://advantagesolutions.net/").openPopup();
+    //sdMarker.bindPopup("<b>9520 Town Centre Drive</b><br>https://advantagesolutions.net/").openPopup();
+
+    function onMapClick(e) {
+        alert("You clicked the map at latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng);
+        console.log(e);
+    }
+    mymap.on('click', onMapClick);
 
 });
